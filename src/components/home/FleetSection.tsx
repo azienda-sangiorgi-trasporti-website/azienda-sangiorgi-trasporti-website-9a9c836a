@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Wrench, Shield, CheckCircle } from 'lucide-react';
+import { ArrowRight, Truck, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import fleetImage from '@/assets/fleet-lineup.jpg';
 
 const features = [
-  { icon: Wrench, text: 'Manutenzione programmata' },
-  { icon: Shield, text: 'Standard di sicurezza elevati' },
-  { icon: CheckCircle, text: 'Veicoli in perfetta efficienza' },
+  { icon: Truck, text: 'Autotreni e bilici' },
+  { icon: CheckCircle, text: 'Allestimenti centinati e aperti' },
+  { icon: CheckCircle, text: 'Soluzioni per trasporto tronchi' },
+  { icon: CheckCircle, text: 'Manutenzione programmata' },
 ];
 
 const FleetSection = () => {
@@ -26,8 +27,12 @@ const FleetSection = () => {
               La nostra flotta
             </h2>
             <div className="divider-copper mb-6" />
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Mezzi dedicati al trasporto legname e merci generiche, costantemente sottoposti a manutenzione e controlli. Una flotta affidabile al servizio delle vostre esigenze logistiche.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              Autotreni e bilici, centinati o aperti, per adattarci alle esigenze del carico. 
+              Mezzi dedicati al trasporto legname e merci generiche, costantemente mantenuti.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Configurazioni adatte a diverse tipologie di carico, inclusi tronchi e materiali forestali.
             </p>
 
             {/* Features */}
@@ -61,7 +66,7 @@ const FleetSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-card">
               <img
                 src={fleetImage}
-                alt="Flotta Sangiorgi Trasporti"
+                alt="Flotta Sangiorgi Trasporti - Autotreni e bilici"
                 className="w-full h-auto object-cover aspect-video"
                 loading="lazy"
               />

@@ -20,7 +20,7 @@ const services = [
   {
     icon: Mountain,
     title: 'Tratte Svizzera',
-    description: 'Specializzati Italia–Svizzera con gestione pratiche doganali e sdoganamento.',
+    description: 'Specializzati Italia–Svizzera con sdoganamento tramite partner ufficiali sul territorio.',
     href: '/servizi',
   },
   {

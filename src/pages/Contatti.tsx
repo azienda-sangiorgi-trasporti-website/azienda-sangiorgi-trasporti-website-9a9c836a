@@ -218,7 +218,7 @@ const Contatti = () => {
                       <div className="flex items-center gap-3">
                         <FileText className="w-5 h-5 text-primary" />
                         <label htmlFor="doganaCH" className="text-sm font-medium text-foreground cursor-pointer">
-                          Trasporto con dogana Svizzera
+                          Richiede sdoganamento Svizzera (gestito da partner)
                         </label>
                       </div>
                       <Switch
@@ -240,7 +240,7 @@ const Contatti = () => {
                             Note per documentazione doganale
                           </label>
                           <Textarea
-                            placeholder="Indicare eventuali documenti già in possesso, requisiti specifici, tipo di merce per classificazione doganale..."
+                            placeholder="Indicare eventuali documenti già in possesso. Lo sdoganamento viene gestito dai nostri partner ufficiali dislocati in Svizzera."
                             rows={3}
                             value={formData.noteDocumenti}
                             onChange={(e) => setFormData({ ...formData, noteDocumenti: e.target.value })}
@@ -323,7 +323,7 @@ const Contatti = () => {
                       'Quantità: peso/volume + lunghezza max tronchi',
                       'Tratta con CAP partenza e arrivo',
                       'Data prevista per carico/scarico',
-                      'Svizzera: indicare se serve gestione doganale',
+                      'Svizzera: indicare se serve sdoganamento (tramite partner)',
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">

@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import { MapPin, Phone, Mail, MessageCircle, Clock, Send } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Switch } from '@/components/ui/switch';
+import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Zap, Check, FileText } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
 
 const Contatti = () => {
@@ -17,6 +18,11 @@ const Contatti = () => {
     telefono: '',
     tipoMerce: '',
     tratta: '',
+    peso: '',
+    volume: '',
+    lunghezzaMax: '',
+    doganaCH: false,
+    noteDocumenti: '',
     dataPrevista: '',
     note: '',
     privacy: false,
@@ -45,6 +51,11 @@ const Contatti = () => {
       telefono: '',
       tipoMerce: '',
       tratta: '',
+      peso: '',
+      volume: '',
+      lunghezzaMax: '',
+      doganaCH: false,
+      noteDocumenti: '',
       dataPrevista: '',
       note: '',
       privacy: false,
@@ -145,14 +156,99 @@ const Contatti = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Tratta (Origine - Destinazione)</label>
+                      <label className="block text-sm font-medium text-foreground mb-2">Tratta (Origine - Destinazione + CAP)</label>
                       <Input
-                        placeholder="Es: Trento - Milano"
+                        placeholder="Es: 38100 Trento - 20100 Milano"
                         value={formData.tratta}
                         onChange={(e) => setFormData({ ...formData, tratta: e.target.value })}
                         className="bg-card border-border h-12"
                       />
                     </div>
+                  </div>
+
+                  {/* Campi opzionali: Peso, Volume, Lunghezza */}
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Peso <span className="text-muted-foreground font-normal">(ton)</span>
+                      </label>
+                      <Input
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        placeholder="Es: 25"
+                        value={formData.peso}
+                        onChange={(e) => setFormData({ ...formData, peso: e.target.value })}
+                        className="bg-card border-border h-12"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Volume <span className="text-muted-foreground font-normal">(m³)</span>
+                      </label>
+                      <Input
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        placeholder="Es: 30"
+                        value={formData.volume}
+                        onChange={(e) => setFormData({ ...formData, volume: e.target.value })}
+                        className="bg-card border-border h-12"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Lunghezza max <span className="text-muted-foreground font-normal">(m)</span>
+                      </label>
+                      <Input
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        placeholder="Es: 13.5"
+                        value={formData.lunghezzaMax}
+                        onChange={(e) => setFormData({ ...formData, lunghezzaMax: e.target.value })}
+                        className="bg-card border-border h-12"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Toggle Dogana Svizzera */}
+                  <div className="bg-card border border-border rounded-xl p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <FileText className="w-5 h-5 text-primary" />
+                        <label htmlFor="doganaCH" className="text-sm font-medium text-foreground cursor-pointer">
+                          Trasporto con dogana Svizzera
+                        </label>
+                      </div>
+                      <Switch
+                        id="doganaCH"
+                        checked={formData.doganaCH}
+                        onCheckedChange={(checked) => setFormData({ ...formData, doganaCH: checked })}
+                      />
+                    </div>
+                    
+                    <AnimatePresence>
+                      {formData.doganaCH && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <label className="block text-sm font-medium text-foreground mb-2">
+                            Note per documentazione doganale
+                          </label>
+                          <Textarea
+                            placeholder="Indicare eventuali documenti già in possesso, requisiti specifici, tipo di merce per classificazione doganale..."
+                            rows={3}
+                            value={formData.noteDocumenti}
+                            onChange={(e) => setFormData({ ...formData, noteDocumenti: e.target.value })}
+                            className="bg-background border-border"
+                          />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   <div>
@@ -208,6 +304,37 @@ const Contatti = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="space-y-6"
               >
+                {/* Checklist Card - Cosa serve per un preventivo */}
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground">
+                      Preventivo in 60 secondi
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Cosa serve per un preventivo rapido:
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      'Tipo di merce (tronchi, segato, altro)',
+                      'Quantità: peso/volume + lunghezza max tronchi',
+                      'Tratta con CAP partenza e arrivo',
+                      'Data prevista per carico/scarico',
+                      'Svizzera: indicare se serve gestione doganale',
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-sm text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 {/* Contact Cards */}
                 <div className="bg-card border border-border rounded-2xl p-6">
                   <h3 className="text-lg font-bold text-foreground mb-6">

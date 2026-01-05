@@ -37,11 +37,11 @@ const services = [
   {
     icon: Mountain,
     title: 'Tratte Svizzera + Gestione Sdoganamento',
-    description: 'Specializzati sulle tratte Italia–Svizzera, con gestione della parte doganale. Ci occupiamo della documentazione e delle pratiche operative legate allo sdoganamento, semplificando la logistica transfrontaliera.',
+    description: 'Specializzati sulle tratte Italia–Svizzera. Per lo sdoganamento ci avvaliamo di partner ufficiali dislocati sul territorio svizzero, garantendo una gestione documentale e operativa efficiente e conforme.',
     features: [
       'Specializzazione tratte Italia ↔ Svizzera',
-      'Gestione parte documentale dello sdoganamento',
-      'Pratiche operative doganali incluse',
+      'Sdoganamento tramite partner ufficiali in loco',
+      'Gestione documentale coordinata',
       'Esperienza consolidata su percorsi alpini',
       'Coordinamento completo import/export',
     ],

@@ -2,7 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Wrench, Shield, CheckCircle, Gauge, Settings } from 'lucide-react';
+import { ArrowRight, Wrench, Shield, CheckCircle, Gauge, Settings, Truck, Satellite, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import fleetImage from '@/assets/fleet-lineup.jpg';
 import trucksNight from '@/assets/trucks-night.jpg';
@@ -26,7 +26,43 @@ const standards = [
   {
     icon: Settings,
     title: 'Configurazioni Versatili',
-    description: 'Allestimenti specifici per il trasporto legname e adattabili per merci generiche.',
+    description: 'Autotreni e bilici con allestimenti centinati e aperti, adatti a diverse tipologie di carico.',
+  },
+];
+
+const fleetTypes = [
+  {
+    icon: Truck,
+    title: 'Autotreni e Bilici',
+    description: 'Mezzi pesanti per trasporti nazionali e internazionali, con capacità di carico ottimali.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Allestimenti Centinati',
+    description: 'Configurazioni chiuse per merci che richiedono protezione dalle intemperie.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Pianali Aperti',
+    description: 'Ideali per il trasporto tronchi e carichi voluminosi con facilità di carico/scarico.',
+  },
+];
+
+const operativityFeatures = [
+  {
+    icon: Satellite,
+    title: 'Controllo Satellitare',
+    description: 'Flotta tracciata e sotto controllo satellitare per una gestione operativa affidabile.',
+  },
+  {
+    icon: MapPin,
+    title: 'Monitoraggio Tratte',
+    description: 'Pianificazione e monitoraggio delle tratte per ottimizzare tempi e risorse.',
+  },
+  {
+    icon: Clock,
+    title: 'Gestione Tempi',
+    description: 'Aggiornamenti operativi e maggiore affidabilità nella gestione delle consegne.',
   },
 ];
 
@@ -40,7 +76,7 @@ const Flotta = () => {
           <div className="absolute inset-0">
             <img
               src={fleetImage}
-              alt="Flotta Sangiorgi Trasporti"
+              alt="Flotta Sangiorgi Trasporti - Autotreni e bilici"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
@@ -56,7 +92,8 @@ const Flotta = () => {
                 La Nostra <span className="text-gradient-copper">Flotta</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Mezzi dedicati e costantemente mantenuti per garantire trasporti sicuri e puntuali.
+                Autotreni e bilici, centinati o aperti, per adattarci alle esigenze del carico. 
+                Mezzi dedicati e costantemente mantenuti per trasporti sicuri e puntuali.
               </p>
             </motion.div>
           </div>
@@ -75,7 +112,7 @@ const Flotta = () => {
               >
                 <img
                   src={fleetImage}
-                  alt="Schieramento flotta Sangiorgi"
+                  alt="Schieramento flotta Sangiorgi - bilici centinati"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -98,7 +135,107 @@ const Flotta = () => {
           </div>
         </section>
 
-        {/* Fleet Description */}
+        {/* Tipologia Mezzi */}
+        <section className="section-padding bg-background">
+          <div className="container-wide">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Tipologia Mezzi
+              </h2>
+              <div className="divider-copper mx-auto mb-6" />
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Autotreni e bilici, centinati o aperti, per adattarci alle esigenze del carico, inclusi tronchi.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {fleetTypes.map((type, index) => (
+                <motion.div
+                  key={type.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <type.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{type.title}</h3>
+                  <p className="text-sm text-muted-foreground">{type.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground italic">
+                * Specifiche tecniche dettagliate e numero mezzi disponibili su richiesta
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Operatività e Controllo */}
+        <section className="section-padding bg-card">
+          <div className="container-wide">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Operatività e Controllo
+                </h2>
+                <div className="divider-copper mb-6" />
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Flotta tracciata e sotto controllo satellitare per una gestione operativa affidabile. 
+                  Monitoriamo le tratte per garantire pianificazione efficiente e comunicazione costante.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Questo si traduce in maggiore affidabilità, gestione ottimale dei tempi 
+                  e visibilità sullo stato delle consegne.
+                </p>
+
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-primary/10 border border-primary/30">
+                  <Satellite className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-foreground">
+                    Tracciabilità Operativa Integrata
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="grid gap-4">
+                  {operativityFeatures.map((feature, index) => (
+                    <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <feature.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Fleet Description & Standards */}
         <section className="section-padding bg-background">
           <div className="container-wide">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -109,35 +246,35 @@ const Flotta = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Mezzi Professionali per Ogni Esigenza
+                  Standard Operativi
                 </h2>
                 <div className="divider-copper mb-6" />
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  La nostra flotta è composta da mezzi pesanti appositamente attrezzati per il trasporto legname e configurabili per merci generiche. Ogni veicolo è sottoposto a manutenzione programmata e controlli periodici.
+                  La nostra flotta è composta da mezzi pesanti appositamente attrezzati per il trasporto legname 
+                  e configurabili per merci generiche. Ogni veicolo è sottoposto a manutenzione programmata 
+                  e controlli periodici.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  Investiamo costantemente nell'aggiornamento della flotta per garantire efficienza, sicurezza e rispetto delle normative ambientali vigenti.
+                  Investiamo costantemente nell'aggiornamento della flotta per garantire efficienza, 
+                  sicurezza e rispetto delle normative ambientali vigenti.
                 </p>
                 
                 <div className="bg-card rounded-xl p-6 border border-border">
-                  <h4 className="font-semibold text-foreground mb-4">Configurazioni Disponibili</h4>
+                  <h4 className="font-semibold text-foreground mb-4">Soluzioni per Trasporto Tronchi</h4>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-primary" />
-                      <span className="text-foreground">Semirimorchi per trasporto tronchi</span>
+                      <span className="text-foreground">Pianali aperti con sistemi di fissaggio</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-primary" />
-                      <span className="text-foreground">Allestimenti per merci generiche</span>
+                      <span className="text-foreground">Configurazioni centinate su richiesta</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-primary" />
-                      <span className="text-foreground">Mezzi con gru su richiesta</span>
+                      <span className="text-foreground">Mezzi con gru disponibili su richiesta</span>
                     </li>
                   </ul>
-                  <p className="text-sm text-muted-foreground mt-4 italic">
-                    * Specifiche tecniche dettagliate disponibili su richiesta
-                  </p>
                 </div>
               </motion.div>
 

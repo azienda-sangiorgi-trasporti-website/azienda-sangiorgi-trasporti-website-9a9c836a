@@ -1,26 +1,26 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { TreePine, Package, Globe, Truck, ArrowRight } from 'lucide-react';
+import { TreePine, Package, Mountain, Truck, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
   {
     icon: TreePine,
     title: 'Trasporto Legname',
-    description: 'Tronchi, legname segato, semilavorati. Esperienza specifica su tratte montane e accessi difficili.',
+    description: 'Tronchi su pianali aperti, soluzioni centinate. Autotreni e bilici dedicati per il settore legname.',
     href: '/legname',
     featured: true,
   },
   {
     icon: Package,
-    title: 'Merci Generiche',
-    description: 'Trasporto conto terzi per ogni tipologia di merce su gomma. Flessibilità e professionalità.',
+    title: 'Merci Nazionali',
+    description: 'Trasporto conto terzi su tutto il territorio italiano. Bilici centinati e pianali aperti.',
     href: '/servizi',
   },
   {
-    icon: Globe,
-    title: 'Nazionale e Internazionale',
-    description: 'Copertura su tutto il territorio italiano. Servizi internazionali su richiesta.',
+    icon: Mountain,
+    title: 'Tratte Svizzera',
+    description: 'Specializzati Italia–Svizzera con gestione pratiche doganali e sdoganamento.',
     href: '/servizi',
   },
   {
@@ -48,7 +48,7 @@ const ServicesSection = () => {
             </h2>
             <div className="divider-copper mb-4" />
             <p className="text-lg text-muted-foreground max-w-xl">
-              Soluzioni di trasporto su misura per il settore legname e merci generiche
+              Trasporto legname e merci su strada, con specializzazione tratte Italia–Svizzera
             </p>
           </motion.div>
           <Link to="/servizi">

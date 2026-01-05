@@ -2,51 +2,56 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { TreePine, Package, Globe, Truck, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { TreePine, Package, Mountain, FileText, Truck, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
   {
     icon: TreePine,
-    title: 'Trasporto Legname',
-    description: 'La nostra specializzazione principale. Trasportiamo tronchi, legname segato, semilavorati e ogni tipo di prodotto forestale.',
+    title: 'Trasporto Legname / Tronchi',
+    description: 'La nostra specializzazione principale. Trasportiamo tronchi su pianali aperti e offriamo soluzioni centinate dove richiesto. Autotreni e bilici dedicati con esperienza consolidata su tratte montane e accessi difficili.',
     features: [
-      'Fissaggio e protezione del carico con procedure specifiche',
+      'Tronchi su pianali aperti con fissaggio professionale',
+      'Soluzioni centinate disponibili su richiesta',
+      'Autotreni e bilici configurati per il legname',
       'Esperienza su tratte montane e accessi difficili',
-      'Gestione tempi di carico e scarico ottimizzati',
       'Documentazione completa per ogni trasporto',
     ],
     href: '/legname',
     featured: true,
+    keywords: ['trasporto legname', 'trasporto tronchi', 'pianale aperto'],
   },
   {
     icon: Package,
-    title: 'Trasporto Merci Generiche',
-    description: 'Servizio di trasporto conto terzi per ogni tipologia di merce su gomma, con la stessa professionalità dedicata al legname.',
+    title: 'Trasporto Merci Nazionale',
+    description: 'Copertura capillare su tutto il territorio italiano. Autotreni e bilici, centinati o aperti, per adattarci alle esigenze del carico. Servizio conto terzi professionale con la stessa affidabilità dedicata al settore legname.',
     features: [
-      'Flessibilità nelle configurazioni di carico',
-      'Mezzi idonei per diverse tipologie di merce',
-      'Puntualità e tracciabilità garantite',
-      'Tariffe competitive',
+      'Copertura capillare su tutta Italia',
+      'Autotreni e bilici con allestimenti centinati o aperti',
+      'Configurazioni adatte a diverse tipologie di carico',
+      'Puntualità e tracciabilità operativa',
     ],
     href: '/contatti',
+    keywords: ['autotrasporto conto terzi', 'bilici centinati'],
   },
   {
-    icon: Globe,
-    title: 'Trasporto Nazionale e Internazionale',
-    description: 'Copertura capillare su tutto il territorio italiano. Servizi internazionali disponibili su richiesta per destinazioni europee.',
+    icon: Mountain,
+    title: 'Tratte Svizzera + Gestione Sdoganamento',
+    description: 'Specializzati sulle tratte Italia–Svizzera, con gestione della parte doganale. Ci occupiamo della documentazione e delle pratiche operative legate allo sdoganamento, semplificando la logistica transfrontaliera.',
     features: [
-      'Rete consolidata su Nord e Centro Italia',
-      'Gestione pratiche doganali per l\'estero',
-      'Pianificazione tratte ottimizzate',
-      'Coordinamento con partner logistici',
+      'Specializzazione tratte Italia ↔ Svizzera',
+      'Gestione parte documentale dello sdoganamento',
+      'Pratiche operative doganali incluse',
+      'Esperienza consolidata su percorsi alpini',
+      'Coordinamento completo import/export',
     ],
     href: '/contatti',
+    keywords: ['trasporto Italia Svizzera', 'sdoganamento Svizzera'],
   },
   {
     icon: Truck,
     title: 'Trasporti Dedicati',
-    description: 'Servizi dedicati per esigenze specifiche della tua azienda. Urgenze programmate e trasporti a richiesta.',
+    description: 'Servizi dedicati per esigenze specifiche della tua azienda. Mezzi riservati per clienti abituali, urgenze con programmazione anticipata e flessibilità operativa.',
     features: [
       'Mezzi dedicati per clienti abituali',
       'Urgenze con programmazione anticipata',
@@ -61,12 +66,12 @@ const additionalServices = [
   {
     icon: Clock,
     title: 'Servizi su Richiesta',
-    description: 'Container, trasporti speciali e configurazioni particolari sono disponibili su richiesta. Contattaci per valutare insieme le tue esigenze.',
+    description: 'Container, trasporti speciali e configurazioni particolari sono disponibili su richiesta. Contattaci per valutare insieme le tue esigenze specifiche.',
   },
   {
     icon: ShieldCheck,
     title: 'Gestione Documentale',
-    description: 'Ci occupiamo di tutta la documentazione necessaria: DDT, CMR per l\'internazionale, certificazioni e report di consegna.',
+    description: 'Ci occupiamo di tutta la documentazione necessaria: DDT, CMR per l\'internazionale, documentazione doganale e report di consegna.',
   },
 ];
 
@@ -88,7 +93,8 @@ const Servizi = () => {
                 I Nostri <span className="text-gradient-copper">Servizi</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Soluzioni di trasporto su strada professionali, dalla specializzazione nel legname al trasporto merci generiche conto terzi.
+                Trasporto legname e merci su strada con specializzazione sulle tratte Italia–Svizzera. 
+                Autotreni e bilici, centinati e aperti, per ogni esigenza di carico.
               </p>
             </motion.div>
           </div>
@@ -97,7 +103,7 @@ const Servizi = () => {
         {/* Main Services */}
         <section className="section-padding bg-background">
           <div className="container-wide">
-            <div className="space-y-12">
+            <div className="space-y-16">
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
@@ -145,6 +151,18 @@ const Servizi = () => {
                         </li>
                       ))}
                     </ul>
+                    {service.keywords && (
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {service.keywords.map((keyword) => (
+                          <span
+                            key={keyword}
+                            className="text-xs px-3 py-1 rounded-full bg-muted text-muted-foreground"
+                          >
+                            {keyword}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}

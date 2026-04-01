@@ -5,7 +5,7 @@ import SwitzerlandSection from '@/components/home/SwitzerlandSection';
 import ValueProposition from '@/components/home/ValueProposition';
 import ServicesSection from '@/components/home/ServicesSection';
 import FleetSection from '@/components/home/FleetSection';
-import KPISection from '@/components/home/KPISection';
+
 import OperativitySection from '@/components/home/OperativitySection';
 import ProcessSection from '@/components/home/ProcessSection';
 import HVOSection from '@/components/home/HVOSection';

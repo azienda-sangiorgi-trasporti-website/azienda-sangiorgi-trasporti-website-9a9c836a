@@ -53,6 +53,12 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
+            <a href="mailto:sangiorgitrasporti@gmail.com">
+              <Button variant="ghost" size="sm" className="gap-2">
+                <Mail className="w-4 h-4" />
+                <span className="text-sm">Email</span>
+              </Button>
+            </a>
             <Button variant="ghost" size="sm" className="gap-2">
               <Phone className="w-4 h-4" />
               <span className="text-sm">Chiama</span>

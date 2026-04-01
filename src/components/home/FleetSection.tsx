@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Truck, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import fleetImage from '@/assets/fleet-lineup.jpg';
+import fleetLineup from '@/assets/fleet-lineup-new.jpg';
+import fleetTimber from '@/assets/fleet-timber-load.jpg';
+import fleetAlpine from '@/assets/fleet-alpine.jpg';
 
 const features = [
   { icon: Truck, text: 'Autotreni e bilici' },
@@ -10,6 +12,12 @@ const features = [
   { icon: CheckCircle, text: 'Soluzioni per trasporto tronchi' },
   { icon: CheckCircle, text: 'Gru Palfinger per movimentazione legname' },
   { icon: CheckCircle, text: 'Manutenzione programmata' },
+];
+
+const galleryImages = [
+  { src: fleetLineup, alt: 'Flotta operativa Sangiorgi - mezzi IVECO schierati', caption: 'Flotta operativa e mezzi dedicati' },
+  { src: fleetTimber, alt: 'Autotreno Sangiorgi con carico di tronchi', caption: 'Autotreni e bilici per carichi lunghi' },
+  { src: fleetAlpine, alt: 'Camion Sangiorgi con tronchi su tratta alpina invernale', caption: 'Operatività su tratte montane' },
 ];
 
 const FleetSection = () => {
@@ -56,7 +64,7 @@ const FleetSection = () => {
             </Link>
           </motion.div>
 
-          {/* Image */}
+          {/* Gallery Grid */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,23 +72,60 @@ const FleetSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-card">
-              <img
-                src={fleetImage}
-                alt="Flotta Sangiorgi Trasporti - Autotreni e bilici"
-                className="w-full h-auto object-cover aspect-video"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <div className="grid grid-cols-2 gap-3">
+              {/* Main large image */}
+              <div className="col-span-2 md:col-span-1 md:row-span-2 relative rounded-2xl overflow-hidden shadow-card group">
+                <img
+                  src={galleryImages[0].src}
+                  alt={galleryImages[0].alt}
+                  className="w-full h-full object-cover aspect-[3/4] md:aspect-auto md:h-full transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width={600}
+                  height={800}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                <span className="absolute bottom-4 left-4 text-xs text-foreground/80 font-medium">
+                  {galleryImages[0].caption}
+                </span>
+              </div>
+
+              {/* Top right */}
+              <div className="relative rounded-2xl overflow-hidden shadow-card group">
+                <img
+                  src={galleryImages[1].src}
+                  alt={galleryImages[1].alt}
+                  className="w-full h-full object-cover aspect-video transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width={600}
+                  height={340}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                <span className="absolute bottom-3 left-3 text-xs text-foreground/80 font-medium">
+                  {galleryImages[1].caption}
+                </span>
+              </div>
+
+              {/* Bottom right */}
+              <div className="relative rounded-2xl overflow-hidden shadow-card group">
+                <img
+                  src={galleryImages[2].src}
+                  alt={galleryImages[2].alt}
+                  className="w-full h-full object-cover aspect-video transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width={600}
+                  height={340}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                <span className="absolute bottom-3 left-3 text-xs text-foreground/80 font-medium">
+                  {galleryImages[2].caption}
+                </span>
+              </div>
             </div>
-            {/* Stats Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-gradient-copper rounded-xl p-6 shadow-copper">
-              <div className="text-3xl font-bold text-primary-foreground">
-                HVO
-              </div>
-              <div className="text-sm text-primary-foreground/80">
-                Carburante alternativo
-              </div>
+
+            {/* HVO Badge */}
+            <div className="absolute -bottom-6 -left-6 bg-gradient-copper rounded-xl p-5 shadow-copper z-10">
+              <div className="text-2xl font-bold text-primary-foreground">HVO</div>
+              <div className="text-xs text-primary-foreground/80">Carburante alternativo</div>
             </div>
           </motion.div>
         </div>

@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Shield, Clock, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
-import fleetImage from '@/assets/fleet-lineup.jpg';
+import fleetImage from '@/assets/fleet-lineup-new.jpg';
+import truckSnow from '@/assets/truck-snow.jpg';
 
 const values = [
   {
@@ -76,6 +77,36 @@ const ChiSiamo = () => {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Operativi in ogni stagione — Snow hero */}
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={truckSnow}
+              alt="Camion Sangiorgi con gru Palfinger su neve in montagna"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
+          </div>
+          <div className="relative container-wide">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-2xl"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Operativi in <span className="text-gradient-copper">ogni stagione</span>
+              </h2>
+              <div className="divider-copper mb-6" />
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Esperienza consolidata su tratte montane e condizioni invernali, con attenzione a sicurezza e pianificazione.
+              </p>
+            </motion.div>
           </div>
         </section>
 

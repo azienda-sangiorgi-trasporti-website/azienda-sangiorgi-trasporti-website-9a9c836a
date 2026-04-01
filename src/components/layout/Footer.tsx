@@ -109,10 +109,6 @@ const Footer = () => {
                 <span className="text-foreground font-medium">Iscrizioni:</span>
                 <p>Albo Autotrasportatori</p>
               </li>
-              <li>
-                <span className="text-foreground font-medium">Attività avviata:</span>
-                <p>2017</p>
-              </li>
             </ul>
           </div>
         </div>

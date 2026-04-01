@@ -76,10 +76,10 @@ const FleetSection = () => {
             {/* Stats Badge */}
             <div className="absolute -bottom-6 -left-6 bg-gradient-copper rounded-xl p-6 shadow-copper">
               <div className="text-3xl font-bold text-primary-foreground">
-                2017
+                HVO
               </div>
               <div className="text-sm text-primary-foreground/80">
-                Anno di fondazione
+                Carburante alternativo
               </div>
             </div>
           </motion.div>

@@ -10,7 +10,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: 'Sicurezza del Carico',
-    description: 'Procedure rigorose per fissaggio e protezione della merce. Ogni trasporto è gestito con la massima attenzione alla sicurezza stradale.',
+    description: 'Ogni trasporto è gestito con la massima attenzione alla sicurezza stradale tramite personale competente che interviene nella messa in sicurezza e nel controllo del fissaggio del carico.',
   },
   {
     icon: Clock,

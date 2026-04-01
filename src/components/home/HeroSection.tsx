@@ -7,7 +7,6 @@ import heroImage from '@/assets/hero-truck-mountains.jpg';
 const trustBadges = [
   { icon: Shield, text: 'Conto terzi (ATECO 49.41)' },
   { icon: Award, text: 'Iscritti Albo Autotrasportatori' },
-  { icon: Clock, text: 'Operativi dal 2017' },
 ];
 
 const HeroSection = () => {

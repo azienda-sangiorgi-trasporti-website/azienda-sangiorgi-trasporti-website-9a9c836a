@@ -14,7 +14,7 @@ const services = [
   {
     icon: Package,
     title: 'Merci Nazionali',
-    description: 'Trasporto conto terzi su tutto il territorio italiano. Bilici centinati e pianali aperti.',
+    description: 'Copertura capillare su tutta Italia, compresa Corsica e Svizzera. Bilici centinati e pianali aperti.',
     href: '/servizi',
   },
   {

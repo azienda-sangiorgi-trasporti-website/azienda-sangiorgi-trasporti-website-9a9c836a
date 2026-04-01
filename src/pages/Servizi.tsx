@@ -24,7 +24,7 @@ const services = [
   {
     icon: Package,
     title: 'Trasporto Merci Nazionale',
-    description: 'Copertura capillare su tutto il territorio italiano. Autotreni e bilici, centinati o aperti, per adattarci alle esigenze del carico. Servizio conto terzi professionale con la stessa affidabilità dedicata al settore legname.',
+    description: 'Copertura capillare su tutta Italia, compresa Corsica e Svizzera. Autotreni e bilici, centinati o aperti, per adattarci alle esigenze del carico. Servizio conto terzi professionale con la stessa affidabilità dedicata al settore legname.',
     features: [
       'Copertura capillare su tutta Italia',
       'Autotreni e bilici con allestimenti centinati o aperti',

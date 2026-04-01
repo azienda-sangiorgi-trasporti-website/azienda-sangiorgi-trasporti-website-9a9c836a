@@ -2,7 +2,10 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Wrench, Shield, CheckCircle, Gauge, Settings, Truck, Satellite, MapPin, Clock } from 'lucide-react';
+import { ArrowRight, Wrench, Shield, CheckCircle, Gauge, Settings, Truck, Satellite, MapPin, Clock, Grip } from 'lucide-react';
+
+// Use Grip as a stand-in icon for crane
+const CraneIcon = Grip;
 import { motion } from 'framer-motion';
 import fleetImage from '@/assets/fleet-lineup.jpg';
 import trucksNight from '@/assets/trucks-night.jpg';

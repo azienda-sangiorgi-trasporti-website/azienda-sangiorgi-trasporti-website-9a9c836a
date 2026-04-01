@@ -8,6 +8,7 @@ const features = [
   { icon: Truck, text: 'Autotreni e bilici' },
   { icon: CheckCircle, text: 'Allestimenti centinati e aperti' },
   { icon: CheckCircle, text: 'Soluzioni per trasporto tronchi' },
+  { icon: CheckCircle, text: 'Gru Palfinger per movimentazione legname' },
   { icon: CheckCircle, text: 'Manutenzione programmata' },
 ];
 

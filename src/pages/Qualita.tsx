@@ -19,7 +19,7 @@ const qualityPoints = [
   {
     icon: ClipboardCheck,
     title: 'Controlli Pre-Partenza',
-    description: 'Verifiche sistematiche su mezzi e carichi prima di ogni viaggio per garantire la sicurezza stradale.',
+    description: 'Verifiche sistematiche su mezzi e carichi prima di ogni viaggio. Ogni trasporto è gestito con la massima attenzione alla sicurezza stradale tramite personale competente che interviene nella messa in sicurezza e nel controllo del fissaggio del carico.',
   },
   {
     icon: UserCheck,
@@ -115,11 +115,11 @@ const Qualita = () => {
                   </div>
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border">
                     <div className="w-3 h-3 rounded-full bg-primary" />
-                    <span className="text-foreground font-medium">Attivi dal 2017</span>
+                    <span className="text-foreground font-medium">Codice ATECO 49.41</span>
                   </div>
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border">
                     <div className="w-3 h-3 rounded-full bg-primary" />
-                    <span className="text-foreground font-medium">Codice ATECO 49.41</span>
+                    <span className="text-foreground font-medium">Carburante HVO (dove compatibile)</span>
                   </div>
                 </div>
               </motion.div>

@@ -50,7 +50,7 @@ const ChiSiamo = () => {
                   Sangiorgi Alessandro Trasporti è un'azienda familiare con sede nel cuore del Piemonte, specializzata nel trasporto legname e merci su strada conto terzi.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Operativi dal 2017, abbiamo costruito la nostra reputazione sulla base di valori semplici ma fondamentali: affidabilità, puntualità e rispetto degli impegni. La nostra conoscenza del territorio e l'esperienza maturata nel settore forestale ci permettono di offrire un servizio di qualità ai nostri clienti.
+                  Abbiamo costruito la nostra reputazione sulla base di valori semplici ma fondamentali: affidabilità, puntualità e rispetto degli impegni. La nostra conoscenza del territorio e l'esperienza maturata nel settore forestale ci permettono di offrire un servizio di qualità ai nostri clienti.
                 </p>
               </motion.div>
 
@@ -68,10 +68,10 @@ const ChiSiamo = () => {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-gradient-copper rounded-xl p-6 shadow-copper">
                   <div className="text-3xl font-bold text-primary-foreground">
-                    Dal 2017
+                    🇮🇹🇨🇭
                   </div>
                   <div className="text-sm text-primary-foreground/80">
-                    Al vostro servizio
+                    Italia – Svizzera
                   </div>
                 </div>
               </motion.div>

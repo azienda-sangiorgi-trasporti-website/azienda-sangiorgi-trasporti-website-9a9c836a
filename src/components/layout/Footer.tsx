@@ -17,7 +17,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Trasporto merci su strada conto terzi con specializzazione nel trasporto legname. Operativi dal 2017.
+              Trasporto merci su strada conto terzi con specializzazione nel trasporto legname.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <FileText className="w-4 h-4 text-primary" />
@@ -108,10 +108,6 @@ const Footer = () => {
               <li>
                 <span className="text-foreground font-medium">Iscrizioni:</span>
                 <p>Albo Autotrasportatori</p>
-              </li>
-              <li>
-                <span className="text-foreground font-medium">Attività avviata:</span>
-                <p>2017</p>
               </li>
             </ul>
           </div>

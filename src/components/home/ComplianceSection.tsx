@@ -55,7 +55,7 @@ const ComplianceSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Copertura Territoriale</h4>
-                  <p className="text-sm text-muted-foreground">Italia e internazionale su richiesta</p>
+                  <p className="text-sm text-muted-foreground">Italia, Corsica e Svizzera</p>
                 </div>
               </div>
             </div>

@@ -37,15 +37,15 @@ const faqs = [
   },
   {
     question: 'Come gestite il fissaggio del carico?',
-    answer: 'Utilizziamo attrezzature specifiche per il trasporto legname: stanti, catene, cinghie e reti di contenimento. Ogni carico viene assicurato secondo le normative vigenti e verificato prima della partenza.',
+    answer: 'Utilizziamo attrezzature specifiche per il trasporto legname: stanti (piantane ExTE), catene, cinghie, reti di contenimento e teloni.',
   },
   {
     question: 'Potete raggiungere zone di carico in montagna?',
-    answer: 'Sì, abbiamo esperienza consolidata su tratte montane e accessi forestali. Valutiamo sempre preventivamente l\'accessibilità per garantire un servizio sicuro e puntuale.',
+    answer: 'Sì, abbiamo esperienza consolidata su tratte montane, accessi forestali e strade innevate. Valutiamo sempre preventivamente l\'accessibilità per garantire un servizio sicuro e puntuale.',
   },
   {
     question: 'Quali documenti vengono forniti per il trasporto?',
-    answer: 'Forniamo DDT (Documento di Trasporto), eventuale CMR per trasporti internazionali, report di consegna e foto del carico se richieste. Tutta la documentazione è disponibile anche in formato digitale.',
+    answer: 'Forniamo DDT (Documento di Trasporto), eventuale CMR per trasporti internazionali, documentazione sdoganamento svizzero, report di consegna e foto del carico se richieste. Tutta la documentazione è disponibile anche in formato digitale.',
   },
   {
     question: 'Effettuate anche trasporti urgenti?',

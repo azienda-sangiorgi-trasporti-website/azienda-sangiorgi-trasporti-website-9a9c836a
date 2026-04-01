@@ -3,12 +3,12 @@ import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Wrench, Shield, CheckCircle, Gauge, Settings, Truck, Satellite, MapPin, Clock, Grip } from 'lucide-react';
-
-// Use Grip as a stand-in icon for crane
-const CraneIcon = Grip;
 import { motion } from 'framer-motion';
-import fleetImage from '@/assets/fleet-lineup.jpg';
-import trucksNight from '@/assets/trucks-night.jpg';
+import fleetLineup from '@/assets/fleet-lineup-new.jpg';
+import fleetTimber from '@/assets/fleet-timber-load.jpg';
+import fleetAlpine from '@/assets/fleet-alpine.jpg';
+
+const CraneIcon = Grip;
 
 const standards = [
   {
@@ -69,6 +69,12 @@ const operativityFeatures = [
   },
 ];
 
+const galleryImages = [
+  { src: fleetLineup, alt: 'Flotta operativa Sangiorgi - mezzi IVECO schierati in piazzale', caption: 'Flotta operativa e mezzi dedicati' },
+  { src: fleetTimber, alt: 'Autotreno Sangiorgi con carico completo di tronchi', caption: 'Autotreni e bilici per carichi lunghi' },
+  { src: fleetAlpine, alt: 'Camion Sangiorgi con tronchi su tratta alpina invernale', caption: 'Operatività su tratte montane' },
+];
+
 const Flotta = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -78,7 +84,7 @@ const Flotta = () => {
         <section className="relative py-32 overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src={fleetImage}
+              src={fleetLineup}
               alt="Flotta Sangiorgi Trasporti - Autotreni e bilici"
               className="w-full h-full object-cover"
             />
@@ -102,38 +108,45 @@ const Flotta = () => {
           </div>
         </section>
 
-        {/* Fleet Gallery */}
+        {/* Fleet Gallery - Premium */}
         <section className="section-padding bg-card">
           <div className="container-wide">
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="relative rounded-2xl overflow-hidden aspect-video"
-              >
-                <img
-                  src={fleetImage}
-                  alt="Schieramento flotta Sangiorgi - bilici centinati"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative rounded-2xl overflow-hidden aspect-video"
-              >
-                <img
-                  src={trucksNight}
-                  alt="Camion Sangiorgi in operatività notturna"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">I Nostri Mezzi</h2>
+              <div className="divider-copper mx-auto" />
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryImages.map((img, index) => (
+                <motion.div
+                  key={img.alt}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative rounded-2xl overflow-hidden shadow-card group ${
+                    index === 0 ? 'md:col-span-2 lg:col-span-1' : ''
+                  }`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    width={800}
+                    height={500}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <span className="text-sm text-foreground font-medium">{img.caption}</span>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -278,7 +291,7 @@ const Flotta = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="grid gap-4">
-                  {operativityFeatures.map((feature, index) => (
+                  {operativityFeatures.map((feature) => (
                     <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border">
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                         <feature.icon className="w-6 h-6 text-primary" />
@@ -333,7 +346,7 @@ const Flotta = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-primary" />
-                      <span className="text-foreground">Mezzi con gru disponibili su richiesta</span>
+                      <span className="text-foreground">Mezzi con gru Palfinger disponibili su richiesta</span>
                     </li>
                   </ul>
                 </div>
@@ -346,7 +359,7 @@ const Flotta = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="grid gap-6">
-                  {standards.map((standard, index) => (
+                  {standards.map((standard) => (
                     <div key={standard.title} className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                         <standard.icon className="w-6 h-6 text-primary" />

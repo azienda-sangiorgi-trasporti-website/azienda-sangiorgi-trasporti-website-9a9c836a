@@ -172,7 +172,64 @@ const Flotta = () => {
               ))}
             </div>
 
-            <div className="text-center">
+            {/* Dimensioni Mezzi */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-card border border-border rounded-2xl p-8 mt-12"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-6">Dimensioni Mezzi</h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="p-5 rounded-xl bg-background border border-border">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Truck className="w-5 h-5 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground">Autotreno</h4>
+                  </div>
+                  <p className="text-muted-foreground text-sm">Motrice <span className="text-foreground font-medium">6,40 m</span> + Rimorchio <span className="text-foreground font-medium">8,20 m</span></p>
+                </div>
+                <div className="p-5 rounded-xl bg-background border border-border">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Truck className="w-5 h-5 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground">Bilico</h4>
+                  </div>
+                  <p className="text-muted-foreground text-sm">Semirimorchio <span className="text-foreground font-medium">13,60 m</span></p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground italic">
+                Configurazioni selezionate in base al carico e alle esigenze operative.
+              </p>
+            </motion.div>
+
+            {/* Gru Palfinger */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-2xl p-8 mt-8"
+            >
+              <div className="flex flex-col md:flex-row items-start gap-6">
+                <div className="w-14 h-14 rounded-xl bg-gradient-copper flex items-center justify-center shrink-0">
+                  <CraneIcon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    Movimentazione con gru Palfinger per legname
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Disponibilità di soluzioni operative con gru Palfinger per movimentazione e supporto alle fasi di carico/scarico (su richiesta e previa verifica).
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="text-center mt-8">
               <p className="text-sm text-muted-foreground italic">
                 * Specifiche tecniche dettagliate e numero mezzi disponibili su richiesta
               </p>

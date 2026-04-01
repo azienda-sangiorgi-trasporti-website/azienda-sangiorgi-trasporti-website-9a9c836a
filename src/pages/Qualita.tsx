@@ -19,7 +19,7 @@ const qualityPoints = [
   {
     icon: ClipboardCheck,
     title: 'Controlli Pre-Partenza',
-    description: 'Verifiche sistematiche su mezzi e carichi prima di ogni viaggio per garantire la sicurezza stradale.',
+    description: 'Verifiche sistematiche su mezzi e carichi prima di ogni viaggio. Ogni trasporto è gestito con la massima attenzione alla sicurezza stradale tramite personale competente che interviene nella messa in sicurezza e nel controllo del fissaggio del carico.',
   },
   {
     icon: UserCheck,

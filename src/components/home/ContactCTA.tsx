@@ -150,13 +150,13 @@ const ContactCTA = () => {
                 Contatti Diretti
               </h3>
               <div className="space-y-6">
-                <a href="tel:+39" className="flex items-center gap-4 p-4 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
+                <a href="tel:+393408107572" className="flex items-center gap-4 p-4 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Telefono</span>
-                    <span className="text-foreground font-semibold">[Inserire numero]</span>
+                    <span className="text-foreground font-semibold">+39 340 810 7572</span>
                   </div>
                 </a>
                 

@@ -169,7 +169,7 @@ const Qualita = () => {
                     <div>
                       <span className="text-sm text-muted-foreground">P.IVA</span>
                       <p className="text-foreground mt-1">
-                        [Inserire P.IVA]
+                        02635580026
                       </p>
                     </div>
                   </div>

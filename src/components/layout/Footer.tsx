@@ -103,7 +103,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="text-foreground font-medium">P.IVA:</span>
-                <p>[Inserire P.IVA]</p>
+                <p>02635580026</p>
               </li>
               <li>
                 <span className="text-foreground font-medium">Iscrizioni:</span>

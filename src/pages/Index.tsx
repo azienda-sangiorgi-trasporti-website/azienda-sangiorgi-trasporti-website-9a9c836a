@@ -22,7 +22,7 @@ const Index = () => {
         <ValueProposition />
         <ServicesSection />
         <FleetSection />
-        <KPISection />
+        
         <OperativitySection />
         <ProcessSection />
         <HVOSection />

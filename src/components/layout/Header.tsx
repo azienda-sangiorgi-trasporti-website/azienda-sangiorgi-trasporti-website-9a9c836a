@@ -59,14 +59,18 @@ const Header = () => {
                 <span className="text-sm">Email</span>
               </Button>
             </a>
-            <Button variant="ghost" size="sm" className="gap-2">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">Chiama</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="gap-2 text-green-500 hover:text-green-400">
-              <MessageCircle className="w-4 h-4" />
-              <span className="text-sm">WhatsApp</span>
-            </Button>
+            <a href="tel:+393408107572">
+              <Button variant="ghost" size="sm" className="gap-2">
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">Chiama</span>
+              </Button>
+            </a>
+            <a href="https://wa.me/393408107572?text=Buongiorno%2C%20vorrei%20un%20preventivo.%0A%0ATipo%20merce%3A%20(tronchi%2Flegname%2Faltro)%0ATratta%20(origine%20%E2%86%92%20destinazione%20%2B%20CAP)%3A%0APeso%2FVolume%20(se%20disponibile)%3A%0AData%20indicativa%3A%0ASvizzera%2Fdogana%3A%20s%C3%AC%2Fno%0ANote%3A" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="sm" className="gap-2 text-green-500 hover:text-green-400">
+                <MessageCircle className="w-4 h-4" />
+                <span className="text-sm">WhatsApp</span>
+              </Button>
+            </a>
             <Link to="/contatti">
               <Button variant="copper" size="default">
                 Richiedi Preventivo

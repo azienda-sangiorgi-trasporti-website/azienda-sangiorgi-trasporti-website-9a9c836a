@@ -312,7 +312,8 @@ const Flotta = () => {
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   La nostra flotta è composta da mezzi pesanti appositamente attrezzati per il trasporto legname 
                   e configurabili per merci generiche. Ogni veicolo è sottoposto a manutenzione programmata 
-                  e controlli periodici.
+                  e controlli periodici. Parte della flotta utilizza carburante HVO dove disponibile e compatibile 
+                  con le specifiche dei mezzi, per ridurre l'impatto rispetto al diesel tradizionale.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   Investiamo costantemente nell'aggiornamento della flotta per garantire efficienza, 

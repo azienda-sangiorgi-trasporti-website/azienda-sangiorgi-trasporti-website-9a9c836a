@@ -68,10 +68,10 @@ const ChiSiamo = () => {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-gradient-copper rounded-xl p-6 shadow-copper">
                   <div className="text-3xl font-bold text-primary-foreground">
-                    Dal 2017
+                    🇮🇹🇨🇭
                   </div>
                   <div className="text-sm text-primary-foreground/80">
-                    Al vostro servizio
+                    Italia – Svizzera
                   </div>
                 </div>
               </motion.div>

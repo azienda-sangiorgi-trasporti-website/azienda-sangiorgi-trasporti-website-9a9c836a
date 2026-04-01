@@ -160,13 +160,13 @@ const ContactCTA = () => {
                   </div>
                 </a>
                 
-                <a href="mailto:sangiorgialessandro@cert.cna.it" className="flex items-center gap-4 p-4 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
+                <a href="mailto:sangiorgitrasporti@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="block text-sm text-muted-foreground">PEC</span>
-                    <span className="text-foreground font-semibold text-sm break-all">sangiorgialessandro@cert.cna.it</span>
+                    <span className="block text-sm text-muted-foreground">Email Commerciale</span>
+                    <span className="text-foreground font-semibold text-sm break-all">sangiorgitrasporti@gmail.com</span>
                   </div>
                 </a>
                 

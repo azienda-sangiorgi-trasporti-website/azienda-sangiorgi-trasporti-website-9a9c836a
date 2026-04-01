@@ -115,7 +115,7 @@ const Qualita = () => {
                   </div>
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border">
                     <div className="w-3 h-3 rounded-full bg-primary" />
-                    <span className="text-foreground font-medium">Attivi dal 2017</span>
+                    <span className="text-foreground font-medium">Iscritti all'Albo Autotrasportatori</span>
                   </div>
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border">
                     <div className="w-3 h-3 rounded-full bg-primary" />

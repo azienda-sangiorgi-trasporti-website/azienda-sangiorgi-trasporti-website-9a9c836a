@@ -341,13 +341,13 @@ const Contatti = () => {
                     Contatti Diretti
                   </h3>
                   <div className="space-y-4">
-                    <a href="tel:+39" className="flex items-center gap-4 p-3 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
+                    <a href="tel:+393408107572" className="flex items-center gap-4 p-3 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                         <Phone className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <span className="block text-xs text-muted-foreground">Telefono</span>
-                        <span className="text-sm text-foreground font-medium">[Inserire numero]</span>
+                        <span className="text-sm text-foreground font-medium">+39 340 810 7572</span>
                       </div>
                     </a>
                     
@@ -361,13 +361,13 @@ const Contatti = () => {
                       </div>
                     </a>
                     
-                    <a href="#" className="flex items-center gap-4 p-3 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
+                    <a href="https://wa.me/393408107572?text=Buongiorno%2C%20vorrei%20un%20preventivo.%0A%0ATipo%20merce%3A%20(tronchi%2Flegname%2Faltro)%0ATratta%20(origine%20%E2%86%92%20destinazione%20%2B%20CAP)%3A%0APeso%2FVolume%20(se%20disponibile)%3A%0AData%20indicativa%3A%0ASvizzera%2Fdogana%3A%20s%C3%AC%2Fno%0ANote%3A" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-background hover:bg-muted/50 transition-colors group">
                       <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
                         <MessageCircle className="w-5 h-5 text-green-500" />
                       </div>
                       <div>
                         <span className="block text-xs text-muted-foreground">WhatsApp</span>
-                        <span className="text-sm text-foreground font-medium">Scrivici</span>
+                        <span className="text-sm text-foreground font-medium">+39 340 810 7572</span>
                       </div>
                     </a>
                   </div>

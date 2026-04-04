@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Clock } from 'lucide-react';
+import { Shield, Award, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-truck-mountains.jpg';
 
@@ -61,9 +61,12 @@ const HeroSection = () => {
                   Richiedi Preventivo
                 </Button>
               </Link>
-              <Button variant="outlineLight" size="xl" className="w-full sm:w-auto">
-                Parla con Noi
-              </Button>
+              <a href="https://wa.me/393408107572?text=Buongiorno%2C%20vorrei%20un%20preventivo%20rapido.%0A%0ATipo%20merce%3A%0ATratta%3A%0AData%3A%0AQuantit%C3%A0%3A" target="_blank" rel="noopener noreferrer">
+                <Button variant="outlineLight" size="xl" className="w-full sm:w-auto gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Parla con Noi
+                </Button>
+              </a>
             </div>
 
             {/* Trust Badges */}

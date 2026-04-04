@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Clock } from 'lucide-react';
+import { Shield, Award, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-truck-mountains.jpg';
 

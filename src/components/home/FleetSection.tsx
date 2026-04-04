@@ -122,9 +122,15 @@ const FleetSection = () => {
               </div>
             </div>
 
-            {/* HVO Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-gradient-copper rounded-xl p-5 shadow-copper z-10">
+            {/* HVO Badge - hidden on mobile, overlay on desktop */}
+            <div className="hidden md:block absolute -bottom-6 -left-6 bg-gradient-copper rounded-xl p-5 shadow-copper z-10">
               <div className="text-2xl font-bold text-primary-foreground">HVO</div>
+              <div className="text-xs text-primary-foreground/80">Carburante alternativo</div>
+            </div>
+
+            {/* HVO Badge - inline on mobile */}
+            <div className="md:hidden mt-3 bg-gradient-copper rounded-xl px-4 py-3 shadow-copper inline-flex items-center gap-3">
+              <div className="text-lg font-bold text-primary-foreground">HVO</div>
               <div className="text-xs text-primary-foreground/80">Carburante alternativo</div>
             </div>
           </motion.div>

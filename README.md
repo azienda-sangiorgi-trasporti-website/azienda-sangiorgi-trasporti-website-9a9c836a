@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# Azienda Sangiorgi Trasporti Website
 
-## Project info
+This project is a working website for a transport company, created to present company services, improve digital presence and support client contact generation.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The project was developed as part of my exploration of AI-assisted/no-code web prototyping for small and medium-sized businesses.
 
-## How can I edit this code?
+## Project Goal
 
-There are several ways of editing your application.
+The goal of this website is to create a simple, clear and professional online presence for a transport/logistics company.
 
-**Use Lovable**
+The website is designed to help the business communicate:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- who the company is;
+- what services it provides;
+- which sectors or routes it covers;
+- how potential clients can request information;
+- how the company can look more reliable and structured online.
 
-Changes made via Lovable will be committed automatically to this repo.
+## My Role
 
-**Use your preferred IDE**
+I worked on the website concept, content structure and AI-assisted/no-code prototyping.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+My contribution focused on:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- understanding the business need;
+- structuring the website pages;
+- creating a professional presentation of services;
+- improving clarity for potential clients;
+- validating how fast a company website can be created using AI-assisted tools.
+- Understading how far can no-code tool can go and deploy websites.
 
-Follow these steps:
+## Tools and Approach
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+This project was created using an AI-assisted and no-code/low-code workflow.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Main tools and concepts involved:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Lovable / AI-assisted website generation;
+- GitHub for version control and project visibility;
+- content structuring with AI tools such as Chat GPT for master prompting;
+- Vercel
+- Supabase
+- Godaddy
+- Iubenda
+- Resend integration for automated email notifications;
+- business-focused website layout;
+- potential future integration with contact forms and backend workflows.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Business Use Case
 
-**Edit a file directly in GitHub**
+Many small and medium-sized companies still have limited digital presence.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project explores how AI-assisted web prototyping can help create a professional website faster, reducing the time and cost needed to test a digital presence.
 
-**Use GitHub Codespaces**
+The same approach can be applied to:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- transport companies;
+- construction companies;
+- local service providers;
+- artisans;
+- small B2B businesses;
+- operational companies that need simple lead generation.
 
-## What technologies are used for this project?
+## Current Status
 
-This project is built with:
+This is a working website
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The project is useful as a demonstration of how a business website can be structured quickly and improved over time with forms, SEO, analytics and automation.
 
-## How can I deploy this project?
+## What I Learned
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project helped me improve my understanding of:
 
-## Can I connect a custom domain to my Lovable project?
+- business website structure;
+- client-oriented communication;
+- AI-assisted content organization;
+- no-code/low-code web prototyping;
+- service presentation for traditional businesses;
+- fast MVP validation for local companies.
 
-Yes, you can!
+## Future Improvements
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Possible next steps include:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- contact form connected to email;
+- Supabase backend for contact requests;
+- Resend integration for automated email notifications;
+- SEO optimization;
+- Google Business Profile integration;
+- analytics tracking;
+- service pages;
+- case studies or client references.
+
+## Disclaimer
+
+This is created with AI-assisted/no-code tools. The objective is to show how digital tools can help traditional businesses create a clearer and more professional online presence.

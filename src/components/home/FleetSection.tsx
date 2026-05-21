@@ -10,7 +10,7 @@ const features = [
   { icon: Truck, text: 'Autotreni e bilici' },
   { icon: CheckCircle, text: 'Allestimenti centinati e aperti' },
   { icon: CheckCircle, text: 'Soluzioni per trasporto tronchi' },
-  { icon: CheckCircle, text: 'Movimentazione legname' },
+  { icon: CheckCircle, text: 'Movimentazione con Gru' },
   { icon: CheckCircle, text: 'Manutenzione programmata' },
 ];
 

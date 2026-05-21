@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Shield, Award, MessageCircle } from 'lucide-react';
+import { Shield, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-truck-mountains.jpg';
 
@@ -61,10 +61,15 @@ const HeroSection = () => {
                   Richiedi Preventivo
                 </Button>
               </Link>
-              <a href="https://wa.me/393408107572?text=Buongiorno%2C%20vorrei%20un%20preventivo%20rapido.%0A%0ATipo%20merce%3A%0ATratta%3A%0AData%3A%0AQuantit%C3%A0%3A" target="_blank" rel="noopener noreferrer">
-                <Button variant="outlineLight" size="xl" className="w-full sm:w-auto gap-2">
-                  <MessageCircle className="w-5 h-5" />
-                  Parla con Noi
+              <a href="https://wa.me/393408107572?text=Buongiorno%2C%20avrei%20bisogno%20di%20un%20preventivo%20per%20un%20trasporto.%0A%0ATipo%20merce%3A%0ATratta%3A%0AData%3A%0AQuantit%C3%A0%3A" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button
+                  size="xl"
+                  className="w-full sm:w-auto gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white border-0 shadow-md"
+                >
+                  <svg viewBox="0 0 32 32" className="w-5 h-5" fill="currentColor" aria-hidden="true">
+                    <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.792 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.748.244-1.118 0-.215-.058-.43-.215-.6-.302-.343-2.092-1.087-2.493-1.087zm-2.42 7.34h-.025c-1.747 0-3.45-.488-4.927-1.405l-.348-.21-3.65.953.973-3.54-.227-.36a9.398 9.398 0 0 1-1.434-4.995c0-5.18 4.214-9.394 9.41-9.394 2.512 0 4.87.98 6.643 2.756a9.345 9.345 0 0 1 2.756 6.643c0 5.18-4.214 9.394-9.395 9.394zm7.71-17.087A10.85 10.85 0 0 0 16.69 4.25C10.673 4.25 5.78 9.144 5.78 15.16a10.81 10.81 0 0 0 1.453 5.444L5.69 26.25l5.788-1.518a10.85 10.85 0 0 0 5.21 1.327h.005c6.016 0 10.91-4.894 10.91-10.91 0-2.913-1.137-5.652-3.193-7.71z"/>
+                  </svg>
+                  Scrivici su WhatsApp
                 </Button>
               </a>
             </div>

@@ -25,8 +25,8 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                SANGIORGI
+              <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-foreground whitespace-nowrap">
+                SANGIORGI ALESSANDRO
               </span>
               <span className="text-xs font-medium tracking-widest text-primary uppercase">
                 Trasporti

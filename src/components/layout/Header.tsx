@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="flex flex-col">
+            <div className="flex flex-col items-center">
               <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-foreground whitespace-nowrap">
                 SANGIORGI ALESSANDRO
               </span>

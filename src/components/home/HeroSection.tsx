@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, Award, MessageCircle } from 'lucide-react';
+import whatsappIcon from '@/assets/whatsapp-icon.svg';
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-truck-mountains.jpg';
 

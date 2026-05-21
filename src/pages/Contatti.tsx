@@ -32,35 +32,58 @@ const Contatti = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.privacy) {
       toast.error('Devi accettare la privacy policy per procedere');
       return;
     }
 
+    const endpoint = import.meta.env.VITE_SUPABASE_FUNCTION_URL as string | undefined;
+    if (!endpoint) {
+      toast.error('Errore di configurazione. Riprova o contattaci via WhatsApp.');
+      return;
+    }
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success('Richiesta inviata con successo! Vi contatteremo al più presto.');
-    setFormData({
-      nome: '',
-      azienda: '',
-      email: '',
-      telefono: '',
-      tipoMerce: '',
-      tratta: '',
-      peso: '',
-      volume: '',
-      lunghezzaMax: '',
-      doganaCH: false,
-      noteDocumenti: '',
-      dataPrevista: '',
-      note: '',
-      privacy: false,
-    });
-    setIsSubmitting(false);
+
+    try {
+      const { privacy, noteDocumenti, ...payload } = formData;
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, noteDocumenti }),
+      });
+
+      let data: { success?: boolean; error?: string } = {};
+      try { data = await res.json(); } catch { /* ignore */ }
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || `HTTP ${res.status}`);
+      }
+
+      toast.success('Richiesta inviata correttamente. Ti ricontatteremo al più presto.');
+      setFormData({
+        nome: '',
+        azienda: '',
+        email: '',
+        telefono: '',
+        tipoMerce: '',
+        tratta: '',
+        peso: '',
+        volume: '',
+        lunghezzaMax: '',
+        doganaCH: false,
+        noteDocumenti: '',
+        dataPrevista: '',
+        note: '',
+        privacy: false,
+      });
+    } catch (err) {
+      console.error('Quote request error:', err);
+      toast.error('Errore durante l\'invio. Riprova o contattaci via WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

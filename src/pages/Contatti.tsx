@@ -33,6 +33,11 @@ const Contatti = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!formData.nome.trim() || !formData.email.trim()) {
+      toast.error('Compila i campi obbligatori (Nome ed Email).');
+      return;
+    }
+
     if (!formData.privacy) {
       toast.error('Devi accettare la privacy policy per procedere');
       return;
@@ -40,18 +45,35 @@ const Contatti = () => {
 
     const endpoint = import.meta.env.VITE_SUPABASE_FUNCTION_URL as string | undefined;
     if (!endpoint) {
-      toast.error('Errore di configurazione. Riprova o contattaci via WhatsApp.');
+      toast.error('Errore nell\'invio. Riprova o scrivici direttamente.');
+      console.error('VITE_SUPABASE_FUNCTION_URL non configurata');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const { privacy, noteDocumenti, ...payload } = formData;
+      // Tutti i campi opzionali sono garantiti come stringhe (mai null/undefined)
+      const payload = {
+        nome: formData.nome?.trim() ?? '',
+        azienda: formData.azienda?.trim() ?? '',
+        email: formData.email?.trim() ?? '',
+        telefono: formData.telefono?.trim() ?? '',
+        tipoMerce: formData.tipoMerce?.trim() ?? '',
+        tratta: formData.tratta?.trim() ?? '',
+        peso: formData.peso?.toString() ?? '',
+        volume: formData.volume?.toString() ?? '',
+        lunghezzaMax: formData.lunghezzaMax?.toString() ?? '',
+        doganaCH: Boolean(formData.doganaCH),
+        noteDocumenti: formData.noteDocumenti?.trim() ?? '',
+        dataPrevista: formData.dataPrevista?.trim() ?? '',
+        note: formData.note?.trim() ?? '',
+      };
+
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...payload, noteDocumenti }),
+        body: JSON.stringify(payload),
       });
 
       let data: { success?: boolean; error?: string } = {};
@@ -61,7 +83,7 @@ const Contatti = () => {
         throw new Error(data.error || `HTTP ${res.status}`);
       }
 
-      toast.success('Richiesta inviata correttamente. Ti ricontatteremo al più presto.');
+      toast.success('Richiesta inviata. Ti ricontatteremo a breve.');
       setFormData({
         nome: '',
         azienda: '',
@@ -80,7 +102,7 @@ const Contatti = () => {
       });
     } catch (err) {
       console.error('Quote request error:', err);
-      toast.error('Errore durante l\'invio. Riprova o contattaci via WhatsApp.');
+      toast.error('Errore nell\'invio. Riprova o scrivici direttamente.');
     } finally {
       setIsSubmitting(false);
     }

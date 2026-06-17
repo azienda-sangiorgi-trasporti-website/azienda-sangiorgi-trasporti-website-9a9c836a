@@ -1,45 +1,29 @@
+## Fix build error CSS — ordine @import in `src/index.css`
 
+**Problema**: Vite/PostCSS richiede che `@import` sia la primissima istruzione del file. Attualmente in `src/index.css` l'ordine è:
+1. `@tailwind base/components/utilities;`
+2. Commento `/* Sangiorgi... */`
+3. `@import url('https://fonts.googleapis.com/css2?family=Inter...')`
 
-# Piano: Logo Google SEO + Structured Data
+Sia le direttive `@tailwind` sia il commento precedono l'`@import`, causando l'errore.
 
-## Cosa faremo
+### Modifica
 
-1. **Copiare il logo** fornito (`Gemini_Generated_Image_5szoyq5szoyq5szo.png`) in `public/logo-square.png`
-2. **Aggiungere JSON-LD** structured data nel `<head>` di `index.html` con Organization schema
-3. **Bonus**: rimuovere "operativi dal 2017" dalla meta description (coerenza con richiesta precedente)
+Riordinare le prime righe di `src/index.css` così:
 
-## Dettagli tecnici
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-### File modificati
+/* Sangiorgi Alessandro Trasporti - Premium Corporate Design System */
 
-| File | Modifica |
-|------|----------|
-| `public/logo-square.png` | Nuovo file — copia del logo caricato |
-| `index.html` | Aggiunta `<script type="application/ld+json">` prima di `</head>` |
-
-### JSON-LD da inserire
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Sangiorgi Alessandro Trasporti",
-  "url": "https://sangiorgitrasporti.com",
-  "logo": "https://sangiorgitrasporti.com/logo-square.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+39-340-810-7572",
-    "contactType": "customer service"
-  }
-}
-</script>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-### Cosa NON tocchiamo
-- Favicon (già funzionante)
-- Nessun altro file o componente
+Nessun'altra modifica al file (colori, token, layer, animazioni restano invariati).
 
-### Nota
-Il logo PNG caricato ha sfondo trasparente e buona risoluzione. Google richiede minimo 112x112px — questo file lo supera ampiamente. Dopo il deploy su `sangiorgitrasporti.com`, il logo sarà accessibile all'URL `https://sangiorgitrasporti.com/logo-square.png` e Google potrà indicizzarlo.
-
+### Non toccato
+- Nessun altro file
+- Nessuna logica form / Supabase / Resend
+- Nessun design token modificato

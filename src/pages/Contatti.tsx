@@ -342,7 +342,7 @@ const Contatti = () => {
                       onCheckedChange={(checked) => setFormData({ ...formData, privacy: checked as boolean })}
                     />
                     <label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                      Accetto il trattamento dei miei dati personali secondo la <a href="https://www.iubenda.com/privacy-policy/45814139" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Privacy Policy</a>. I dati saranno utilizzati esclusivamente per rispondere alla richiesta di preventivo.
+                      Accetto il trattamento dei miei dati personali secondo la <a href="https://www.iubenda.com/privacy-policy/45814139" target="_blank" rel="noopener noreferrer" title="Privacy Policy" className="iubenda-white iubenda-noiframe iubenda-embed text-primary hover:underline">Privacy Policy</a>. I dati saranno utilizzati esclusivamente per rispondere alla richiesta di preventivo.
                     </label>
                   </div>
 

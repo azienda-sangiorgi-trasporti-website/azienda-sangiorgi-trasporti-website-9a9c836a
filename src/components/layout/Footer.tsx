@@ -123,7 +123,7 @@ const Footer = () => {
               <a href="https://www.iubenda.com/privacy-policy/45814139" target="_blank" rel="noopener noreferrer" title="Privacy Policy" className="iubenda-white iubenda-noiframe iubenda-embed text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="https://www.iubenda.com/privacy-policy/45814139/cookie-policy" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.iubenda.com/privacy-policy/45814139/cookie-policy" target="_blank" rel="noopener noreferrer" title="Cookie Policy" className="iubenda-white iubenda-noiframe iubenda-embed text-sm text-muted-foreground hover:text-primary transition-colors">
                 Cookie Policy
               </a>
             </div>

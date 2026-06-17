@@ -32,6 +32,7 @@ const Contatti = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Submit clicked");
 
     if (!formData.nome.trim() || !formData.email.trim()) {
       toast.error('Compila i campi obbligatori (Nome ed Email).');
@@ -42,6 +43,9 @@ const Contatti = () => {
       toast.error('Devi accettare la privacy policy per procedere');
       return;
     }
+
+    console.log("Endpoint configured:", Boolean(import.meta.env.VITE_SUPABASE_FUNCTION_URL));
+    console.log("Endpoint includes supabase:", import.meta.env.VITE_SUPABASE_FUNCTION_URL?.includes("supabase.co"));
 
     const endpoint = import.meta.env.VITE_SUPABASE_FUNCTION_URL as string | undefined;
     if (!endpoint) {
@@ -70,14 +74,27 @@ const Contatti = () => {
         note: formData.note?.trim() ?? '',
       };
 
+      console.log("Payload keys:", Object.keys(payload));
+      console.log("Payload email present:", Boolean(payload.email));
+      console.log("Payload privacy accepted:", formData.privacy);
+
+      console.log("Calling Supabase quote function...");
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
+      console.log("Quote function status:", res.status);
+      console.log("Quote function ok:", res.ok);
+
+      const rawText = await res.clone().text();
+      console.log("Raw response body:", rawText);
+
       let data: { success?: boolean; error?: string } = {};
       try { data = await res.json(); } catch { /* ignore */ }
+
+      console.log("Quote function result:", data);
 
       if (!res.ok || !data.success) {
         throw new Error(data.error || `HTTP ${res.status}`);
@@ -107,6 +124,7 @@ const Contatti = () => {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <div className="min-h-screen bg-background">

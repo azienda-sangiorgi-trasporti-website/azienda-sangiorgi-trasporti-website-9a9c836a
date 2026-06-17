@@ -120,12 +120,12 @@ const Footer = () => {
               © {new Date().getFullYear()} Sangiorgi Alessandro Trasporti. Tutti i diritti riservati.
             </p>
             <div className="flex items-center gap-6">
-              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.iubenda.com/privacy-policy/45814139" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
-              </Link>
-              <Link to="/cookie" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              <a href="https://www.iubenda.com/privacy-policy/45814139/cookie-policy" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Cookie Policy
-              </Link>
+              </a>
             </div>
           </div>
         </div>
